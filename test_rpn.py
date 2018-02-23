@@ -8,3 +8,6 @@ class TestBasics(unittest.TestCase):
     def test_adds(self):
         result = rpn.calculate('1 1 + 2 +')
         self.assertEqual(4, result)
+    def test_substract(self):
+        result = rpn.calculate('5 2 -')
+        self.assertEqual(3, result)
