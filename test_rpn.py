@@ -41,3 +41,12 @@ class TestBasics(unittest.TestCase):
     def test_summation(self):
         result = rpn.calculate('1 2 3 4 5 6 7 8 9 10 s')
         self.assertEqual([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 55], result)
+    def test_exponentiationPos(self):
+        result = rpn.calculate('2 3 ^')
+        self.assertEqual(8, result)
+    def test_exponentiationZ(self):
+        result = rpn.calculate('2 0 ^')
+        self.assertEqual(1, result)
+    def test_exponentiationNeg(self):
+        result = rpn.calculate('2 -1 ^')
+        self.assertEqual(0.5, result)
